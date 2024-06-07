@@ -58,14 +58,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->execute();
 
         $result = $stmt->get_result();
-        echo($result);
         $stmt->close();
         $conn->close();
 
         // Erstelle eine Antwort
         $response = [
             'status' => 'success',
-            'message' => "Abfrage erfolgreich!"
+            'message' => "Abfrage erfolgreich !"
         ];
 
     }
