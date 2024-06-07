@@ -1,0 +1,51 @@
+* {
+    background-color: aliceblue;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.header img {
+    display: inline-block;
+    padding-right: 10px;
+}
+
+.header h1 {
+    display: inline-block;
+}
+
+.header {
+    border: 1px solid black;
+}
+
+.eintrag {
+    border: 1px solid black;
+    border-radius: 10px;
+    min-height: 70vh;
+    width: 80%;
+    margin-left: auto;
+    margin-right: 0;
+    background-color: aliceblue;
+}
+
+.eintrag input, label, button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 10px;
+    background-color: aliceblue;
+}
+
+select option {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 10px;
+    background-color: aliceblue;
+}
+
+.eintrag form {
+    background-color: aliceblue;
+}
+
+#response {
+    width: 50%;
+}
