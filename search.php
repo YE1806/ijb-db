@@ -68,12 +68,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             'message' => "Abfrage erfolgreich!"
         ];
 
-    } else {
-        // Fehlende Parameter
-        $response = [
-            'status' => 'error',
-            'message' => 'Fehlende Parameter. Bitte name und nachname angeben.'
-        ];
     }
     
     // Setze den Content-Type Header auf JSON
