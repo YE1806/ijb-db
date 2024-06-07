@@ -1,7 +1,7 @@
 <?php
 // Überprüfe, ob eine GET-Anfrage gestellt wurde
-$servername = "database-2.cqtbmyfv1bhr.eu-central-1.rds.amazonaws.com";
-$username = "admin";
+$servername = "localhost";
+$username = "root";
 $password = "Yasemin2012";
 $dbname = "kontakte";
 
