@@ -79,20 +79,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     // Gebe die Antwort als JSON zurück
     echo json_encode($response);
-} else {
-    // Ungültige Anfrage-Methode
-    $response = [
-        'status' => 'error',
-        'message' => 'Ungültige Anfrage-Methode. Bitte eine GET-Anfrage stellen.'
-    ];
-    
-    // Setze den Content-Type Header auf JSON
-    header('Content-Type: application/json');
-
-    
-    // Gebe die Antwort als JSON zurück
-    echo json_encode($response);
-}
-
+} 
 
 ?>
