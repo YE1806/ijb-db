@@ -33,12 +33,38 @@
                     $("#myform")[0].reset();
                 })
             })
+
+            $(document).ready(function() {
+                $("#myform2").submit(function(event){
+                    event.preventDefault();
+
+                    var formData = {
+                        name: $("#name2").val(),
+                        surname: $("#surname2").val(),
+                        telefon: $("#telefon2").val(),
+                        seviye: $("#seviye2").val(),
+                        vazife: $("#vazife2").val()
+                    };
+
+                    $.ajax({
+                        type: "POST",
+                        url: "http://139.162.136.175/search.php",
+                        data: formData,
+                        encode: true,
+                        success: function(response) {
+                            $("#response").html("<p>" + response.message + "</p>");
+                        }
+                    })
+                    $("#myform2")[0].reset();
+                })
+            })
             </script>
         <div class="header">
                 <img src="assets/logo.jpg" width="3%">
             <h1>Islamische Jugend in Bayern</h1>
         </div>
         <div class="eintrag">
+            <h3>Kayit giris:</h3>
             <form method="POST" id="myform">
                 <label for="name">Isim:</label>
                 <input type="text" placeholder="Isim" name="name" id="name" required>
@@ -65,6 +91,30 @@
             </form>
             <div id="response"></div>
         </div>
-
+        <div class="eintrag" id="abfrage">
+            <h3>Kayit sorgula:</h3>
+            <form id="myform2">
+                <label for="name2">Isim:</label>
+                <input name="name2" id="name2" placeholder="Isim">
+                <label for="surname2">Soyisim:</label>
+                <input name="surname2" id="surname2" placeholder="Soyisim">
+                <label for="seviye2">Isim:</label>
+                <select name="seviye2" id="seviye2" required>
+                    <option value="">--Seviye?--</option>
+                    <option value="Ihvan">Ihvan</option>
+                    <option value="Muhibban">Muhibban</option>
+                    <option value="Talebe">Talebe</option>
+                    <option value="Hoca">Hoca</option>
+                </select>
+                <label for="vazife2">Vazife:</label>
+                <select name="vazife2" id="vazife2" required>
+                    <option value="">--Vazife?--</option>
+                    <option value="Var">Var</option>
+                    <option value="Yok">Yok</option>
+                    <option value="Istiyor">Istiyor</option>
+                </select>
+                <input type="submit" value="Kaydet">
+            </form>
+        </div>
     </body>
 </html>
