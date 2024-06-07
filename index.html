@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="style.css">
         <title>IJB Yeni Giris</title>
         <link rel="icon" type="image/x-icon" href="assets/logo.jpg">
     </head>
@@ -15,22 +15,22 @@
 
                     var formData = {
                         name: $("#name").val(),
-                        surname: $("#surname").val()
+                        surname: $("#surname").val(),
+                        telefon: $("#telefon").val(),
+                        seviye: $("#seviye").val(),
+                        vazife: $("#vazife").val()
                     };
 
                     $.ajax({
                         type: "POST",
-                        url: "http://localhost:8000/server.php",
+                        url: "http://192.168.80.128/server.php",
                         data: formData,
-                        dataType: "json",
                         encode: true,
                         success: function(response) {
                             $("#response").html("<p>" + response.message + "</p>");
-                        },
-                        error: function(xhr, status, error) {
-                            $("#response").mhtl("<p>Fehler: " + error + "</p>");
                         }
                     })
+                    $("#myform")[0].reset();
                 })
             })
             </script>
@@ -41,12 +41,29 @@
         <div class="eintrag">
             <form method="POST" id="myform">
                 <label for="name">Isim:</label>
-                <input type="text" placeholder="Isim" name="name" id="name">
+                <input type="text" placeholder="Isim" name="name" id="name" required>
                 <label for="surname">Soyisim:</label>
-                <input type="text" placeholder="Soysim" name="surname" id="surname">
+                <input type="text" placeholder="Soyisim" name="surname" id="surname" required>
+                <label for="telefon">Telefon:</label>
+                <input type="text" placeholder="Telefon" name="telefon" id="telefon" required>
+                <label for="seviye">Seviye:</label>
+                <select name="seviye" id="seviye" required>
+                    <option value="">--Seviye?--</option>
+                    <option value="Ihvan">Ihvan</option>
+                    <option value="Muhibban">Muhibban</option>
+                    <option value="Talebe">Talebe</option>
+                    <option value="Hoca">Hoca</option>
+                </select>
+                <label for="vazife">Vazife:</label>
+                <select name="vazife" id="vazife" required>
+                    <option value="">--Vazife?--</option>
+                    <option value="Var">Var</option>
+                    <option value="Yok">Yok</option>
+                    <option value="Istiyor">Istiyor</option>
+                </select>
                 <input type="submit" value="Kaydet">
             </form>
-            <div id="response"><p>test</p></div>
+            <div id="response"></div>
         </div>
 
     </body>
