@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         ];
 
     }
-    
+    //PHP Comment
     // Setze den Content-Type Header auf JSON
 
     header('Content-Type: application/json');
